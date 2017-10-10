@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import fp from './floor plan.jpg';
+import fire from './fire.png';
 import './App.css';
 const DATA = {
   areas :['12','123','b101'],
@@ -10,9 +11,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          Testing title here!
         </header>
+        <img src={fp} className="App-logo" alt="logo" />
+        <img src={fire} className="Fire-img" alt="funky" />
+        <h1 className="App-title">Welcome to React</h1>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
@@ -20,5 +23,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
