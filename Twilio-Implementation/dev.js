@@ -3,7 +3,7 @@ var authToken = "da4e5b82134ddff109dc36c5be375f78";
 var client = require('twilio')(accountSid, authToken);
 
 client.calls.create({
-    url: "https://github.com/Aniket965/hackbvp-17/blob/master/Twilio-Implementation/doc.xml",
+    url: "http://aniket965.tech/hackbvp-17/Twilio-Implementation/doc.xml",
     to: "+918800752205",
     from: "+18134524968"
 }, function(err, call) {
