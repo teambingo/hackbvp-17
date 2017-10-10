@@ -14,20 +14,33 @@
   .App-logo {
     width: 100%;
   }
+  .Fire-imge{
+    position:absolute;
+    left:80px;
+    top: 380px;
+    width: 10%;
+    z-index: 10;
+  }
 }
 
 @media only screen and (min-width: 500px) {
   .Fire-img{
     position:absolute;
-    left:150px;
-    top: 380px;
-    width: 10%;
+    left:580px;
+    top: 490px;
+    width: 3%;
     z-index: 10;
   }
   .App-logo {
-    width: 30%;
+    width: 40%;
   }
-  
+  .Fire-imge{
+    position:absolute;
+    left:500px;
+    top: 490px;
+    width: 3%;
+    z-index: 10;
+  }
 }
 
 .App-header {
