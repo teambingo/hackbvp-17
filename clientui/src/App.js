@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+const DATA = {
+  areas :['12','123','b101'],
+  distasrertype: 'fire'
+}
 class App extends Component {
   render() {
     return (
