@@ -21,6 +21,7 @@
     "exec": "^0.2.1",
     "express": "^4.16.2",
     "plain-text-data-to-json": "^1.0.1",
-    "text-2-json": "^1.0.3"
+    "text-2-json": "^1.0.3",
+    "twilio": "^3.8.0"
   }
 }
