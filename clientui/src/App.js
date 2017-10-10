@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import fp from './floor plan.jpg';
 import fire from './fire.png';
 import './App.css';
-
+const DATA = {
+  areas :['12','123','b101'],
+  distasrertype: 'fire'
+}
 class App extends Component {
   state = { showExtraFire:false};
   componentWillMount() {
