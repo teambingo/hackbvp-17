@@ -3,15 +3,29 @@ import fp from './floor plan.jpg';
 import fire from './fire.png';
 import './App.css';
 import axios from 'axios';
-const DATA = {
-  areas :['12','123','b101'],
-  distasrertype: 'fire'
-}
+import firebase from 'firebase';
+
 class App extends Component {
   state = { showExtraFire:false};
   componentWillMount() {
-    setTimeout(() => { this.setState({showExtraFire: true}); }, 3000);
-    axios.post('https://localhost:5000/call',{phoneNumber: 9643698769, salesNumber  : 9999875562});
+    //setTimeout(() => { this.setState({showExtraFire: true}); }, 3000);
+    //axios.post('https://localhost:5000/call',{phoneNumber: 9643698769, salesNumber  : 9999875562});
+    var config = {
+      apiKey: "AIzaSyCOmubrc3gEd6LOW5UfRH5LVaL-GFgRCgk",
+      authDomain: "not-so-awesome-project-45a2e.firebaseapp.com",
+      databaseURL: "https://not-so-awesome-project-45a2e.firebaseio.com",
+      projectId: "not-so-awesome-project-45a2e",
+      storageBucket: "not-so-awesome-project-45a2e.appspot.com",
+      messagingSenderId: "481329884022"
+    };
+    firebase.initializeApp(config);
+    firebase.database().ref('/data').on("value", snapshot => {
+      console.log(snapshot.val().Area);
+        if(snapshot.val().Area === undefined)
+          this.setState({showExtraFire: false});
+        else
+          this.setState({showExtraFire: true});
+    });
   }
   extraFire() {
     if(this.state.showExtraFire == true) {
