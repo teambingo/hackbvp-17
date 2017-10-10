@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import fp from './floor plan.jpg';
 import fire from './fire.png';
 import './App.css';
-import axios from 'axios';
+//import axios from 'axios';
 import firebase from 'firebase';
 
 class App extends Component {
@@ -20,15 +20,20 @@ class App extends Component {
     };
     firebase.initializeApp(config);
     firebase.database().ref('/data').on("value", snapshot => {
-      console.log(snapshot.val().Area);
-        if(snapshot.val().Area === undefined)
+      let data = snapshot.val();
+      console.log(data);
+      console.log(snapshot.val().Areas);
+      for(let i in data) {
+        console.log(data[i]);
+        if(data[i].Areas === undefined)
           this.setState({showExtraFire: false});
         else
           this.setState({showExtraFire: true});
+      }
     });
   }
   extraFire() {
-    if(this.state.showExtraFire == true) {
+    if(this.state.showExtraFire === true) {
       return(
         <div>
           <img src={fire} className="Fire-imge"  alt="logo" />
