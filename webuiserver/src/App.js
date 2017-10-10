@@ -7,6 +7,16 @@ import {
   Button,
   Statistic
 } from 'semantic-ui-react'
+const maper = {
+  "12323": "govind",
+  "12324": "harsh",
+  "12325": "harshul",
+  "12345": "aniket",
+}
+const data = [{ ip: 123, mac: 12323 },
+{ ip: 123, mac: 12324 },
+{ ip: 123, mac: 12325 },
+{ip:12,mac:12345}]
 class App extends Component {
   render() {
     return (
@@ -23,10 +33,10 @@ class App extends Component {
 
           <Grid.Row centered>
             <Grid.Column widescreen='5' textAlign='center'>
-              <Statistic value='2' label='females' color='red' />
+              <Statistic value='0' label='females' color='red' />
             </Grid.Column>
             <Grid.Column widescreen='5' textAlign='center'>
-              <Statistic value='1' label='males' color='red' />
+              <Statistic value={data.length} label='males' color='red' />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>
@@ -37,62 +47,27 @@ class App extends Component {
 
           <Grid.Row centered>
             <Grid.Column widescreen='10'>
-            <Card.Group>
-            <Card >
-              <Card.Content>
-                <Image floated='right' size='mini' src='https://react.semantic-ui.com/assets/images/avatar/large/steve.jpg' />
-                <Card.Header>
-                  Govind Chaudhary
-        </Card.Header>
-                <Card.Meta>
-                  Friend of Harsh
-        </Card.Meta>
-              </Card.Content>
-              <Card.Content extra>
-                <div className='ui two buttons'>
-                  <Button basic color='green'>Call</Button>
-                  <Button basic color='red'>Address</Button>
-                </div>
-              </Card.Content>
-            </Card>
+              <Card.Group>
+                {data.map((user) => {
+                  return (
+                    <Card key={user.mac} >
+                      <Card.Content>
+                        <Image floated='right' size='mini' src='https://react.semantic-ui.com/assets/images/avatar/large/steve.jpg' />
+                        <Card.Header>
+                          {maper[user.mac]}
+                        </Card.Header>
+                      </Card.Content>
+                      <Card.Content extra>
+                        <div className='ui two buttons'>
+                          <Button basic color='green'>Call</Button>
+                          <Button basic color='red'>Address</Button>
+                        </div>
+                      </Card.Content>
+                    </Card>
+                  )
+                })}
 
-            <Card >
-              <Card.Content>
-                <Image floated='right' size='mini' src='https://react.semantic-ui.com/assets/images/avatar/large/molly.png' />
-                <Card.Header>
-                  Harshita
-        </Card.Header>
-                <Card.Meta>
-                  Friends of Elliot
-        </Card.Meta>
-  
-              </Card.Content>
-              <Card.Content extra>
-                <div className='ui two buttons'>
-                  <Button basic color='green'>Call</Button>
-                  <Button basic color='red'>Address</Button>
-                </div>
-              </Card.Content>
-            </Card>
-            <Card >
-              <Card.Content>
-                <Image floated='right' size='mini' src='https://react.semantic-ui.com/assets/images/avatar/large/steve.jpg' />
-                <Card.Header>
-                  Rashmi Chauhan
-        </Card.Header>
-                <Card.Meta>
-                  Friend of Harsh
-        </Card.Meta>
-              
-              </Card.Content>
-              <Card.Content extra>
-                <div className='ui two buttons'>
-                  <Button basic color='green'>Call</Button>
-                  <Button basic color='red'>Address</Button>
-                </div>
-              </Card.Content>
-            </Card>
-            </Card.Group>
+              </Card.Group>
             </Grid.Column>
           </Grid.Row>
         </Grid>
