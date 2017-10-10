@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fp from './floor plan.jpg';
 import fire from './fire.png';
 import './App.css';
+import axios from 'axios';
 const DATA = {
   areas :['12','123','b101'],
   distasrertype: 'fire'
@@ -10,6 +11,7 @@ class App extends Component {
   state = { showExtraFire:false};
   componentWillMount() {
     setTimeout(() => { this.setState({showExtraFire: true}); }, 3000);
+    axios.post('https://localhost:5000/call',{phoneNumber: 9643698769, salesNumber  : 9999875562});
   }
   extraFire() {
     if(this.state.showExtraFire == true) {
