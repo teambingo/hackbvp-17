@@ -1,7 +1,7 @@
 const express = require('express')
 const exec = require('exec')
-const users = /192.168.137.\d{2,3}\s{7,8}\w{2}-\w{2}-\w{2}-\w{2}-\w{2}-\w{2}/g
-const ips = /192.168.137.\d{2,3}/g
+const users = /192.168.137.\d{1,3}\s{7,9}\w{2}-\w{2}-\w{2}-\w{2}-\w{2}-\w{2}/g
+const ips = /192.168.137.\d{1,3}/g
 const app = express()
 const port = 4000
 var allowCrossDomain = function (req, res, next) {

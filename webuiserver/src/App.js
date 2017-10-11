@@ -8,7 +8,7 @@ import {
   Statistic
 } from 'semantic-ui-react'
 const maper = {
-  "12323": "govind",
+  "b0-c0-90-1c-74-fb": "govind",
   "68-c4-4d-2b-9a-ee": "harsh",
   "c8-25-e1-21-d9-6a": "harshul",
   "50-8f-4c-92-0f-3f": "aniket",
